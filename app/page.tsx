@@ -208,6 +208,8 @@ function Button({
 }
 
 export default function Page() {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   const { theme, setTheme } = useTheme();
   const [menuOpen, setMenuOpen] = useState(false);
   const heroRef = useRef<HTMLDivElement | null>(null);
@@ -249,10 +251,14 @@ export default function Page() {
                 variant="ghost"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                {theme === "dark" ? (
-                  <Sun className="w-4 h-4" />
+                {mounted ? (
+                  theme === "dark" ? (
+                    <Sun className="w-4 h-4" />
+                  ) : (
+                    <Moon className="w-4 h-4" />
+                  )
                 ) : (
-                  <Moon className="w-4 h-4" />
+                  <span className="inline-block w-4 h-4" aria-hidden />
                 )}
               </Button>
               <Button href="#contact">
@@ -264,10 +270,14 @@ export default function Page() {
                 variant="ghost"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               >
-                {theme === "dark" ? (
-                  <Sun className="w-5 h-5" />
+                {mounted ? (
+                  theme === "dark" ? (
+                    <Sun className="w-5 h-5" />
+                  ) : (
+                    <Moon className="w-5 h-5" />
+                  )
                 ) : (
-                  <Moon className="w-5 h-5" />
+                  <span className="inline-block w-5 h-5" aria-hidden />
                 )}
               </Button>
               <button

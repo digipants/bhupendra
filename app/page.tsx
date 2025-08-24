@@ -86,21 +86,28 @@ const CASE_STUDIES = [
     metric: "Direct bookings up",
     summary:
       "Rebuilt the funnel with PMax + Meta remarketing, added parity landing pages, and automated cart‑abandon flows.",
-    link: "#",
+    link: "/bhupendra/work/upscale-hotel",
   },
   {
     title: "PearlyTots — D2C Launch & Scale",
     metric: "CVR trending ↑",
     summary:
       "Shopify launch with Syncee/Zendrop, creative testing, UGC ads, and post‑purchase upsells to improve AOV & LTV.",
-    link: "#",
+    link: "/bhupendra/work/pearlytots",
   },
   {
-    title: "QuickSqad — AI Support to Cut CAC",
+    title: "quicksquad — AI Support to Cut CAC",
     metric: "Lower acquisition cost",
     summary:
       "Built an AI triage bot and revamped landing UX for clarity and faster resolution; improved trust and lead quality.",
-    link: "#",
+    link: "/bhupendra/work/quicksquad",
+  },
+  {
+    title: "Zescher — POD Launch & Growth",
+    metric: "MQL to SQL up",
+    summary:
+      "Set up lead scoring, email sequences, and retargeting ads to nurture leads and shorten the sales cycle.",
+    link: "/bhupendra/work/zescher",
   },
 ];
 
@@ -238,15 +245,22 @@ export default function Page() {
               BK
             </a>
             <nav className="hidden md:flex items-center gap-6">
-              {NAV.map((n) => (
-                <a
-                  key={n.id}
-                  href={`#${n.id}`}
-                  className="text-sm font-medium hover:opacity-70"
-                >
-                  {n.label}
-                </a>
-              ))}
+              {NAV.map((n) => {
+                // custom hrefs
+                let href = `#${n.id}`;
+                if (n.id === "home") href = "/bhupendra";
+                if (n.id === "work") href = "/bhupendra/work"; // or "/work" if basePath handles it
+
+                return (
+                  <a
+                    key={n.id}
+                    href={href}
+                    className="text-sm font-medium hover:opacity-70"
+                  >
+                    {n.label}
+                  </a>
+                );
+              })}
               <Button
                 variant="ghost"
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     title: "Bhupendra Kumar — Founder, DigiPants",
     description:
       "Driving revenue with Google/Meta Ads, CRO, and AI automations for hotels, D2C brands, and service businesses.",
-    url: "/bhupendra/",
+    url: "/",
     siteName: "DigiPants",
     images: [{ url: "/bhupendra/og.jpg", width: 1200, height: 630 }],
     locale: "en_IN",

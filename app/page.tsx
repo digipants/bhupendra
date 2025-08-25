@@ -104,9 +104,9 @@ const CASE_STUDIES = [
   },
   {
     title: "Zescher — POD Launch & Growth",
-    metric: "MQL to SQL up",
+    metric: "360° brand launch",
     summary:
-      "Set up lead scoring, email sequences, and retargeting ads to nurture leads and shorten the sales cycle.",
+      "Sanskrit‑inspired POD brand with automated design‑to‑print workflow and a conversion‑optimized storefront.",
     link: "/bhupendra/work/zescher",
   },
 ];
